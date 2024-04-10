@@ -1,0 +1,413 @@
+
+/*@import './colors/interstellar-pink.css';*/
+@import './colors/Custom-Dream.css';
+/*@import './colors/celestial-blaze.css';*/
+
+* {
+    border: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
+    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    /*font-family: "JetBrainsMono Nerd Font";*/
+    font-size: 14px;
+    font-style: normal;
+    min-height: 0;
+    opacity: 0.90;
+}
+
+window#waybar {
+   /* background: rgba(30, 30, 46, 0.5);*/
+  background: transparent; 
+  /*border-bottom: 1px solid @bg-color-secondary;*/
+    color: @text-color-primary;
+}
+
+#workspaces {
+	background: transparent;
+    /*opacity: 0.65;*/
+	margin: 5px 15px 5px 15px;
+  padding: 0px 5px 0px 5px;
+         box-shadow: 0 0 8px 2px @muted-text-color; /* Pink glow */
+	border-radius: 16px;
+  border: solid 2px @text-color-primary;
+  font-weight: bold;
+  font-style: normal;
+  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+ }
+
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 16px;
+    color: @text-color-primary;
+}
+
+#workspaces button.active {
+    color: @muted-text-color;
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+#workspaces button:hover {
+	background-color: @text-color-secondary;
+	color: black;
+	border-radius: 16px;
+}
+
+#custom-date, #clock, #pulseaudio, #custom-randwall, #custom-launcher, #battery, #battery.icon{
+    background: transparent;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+ /* border-bottom: solid 1px @border-color-primary;
+ */
+}
+
+#custom-power {
+  color: @muted-text-color;
+	background: transparent;
+	margin: 5px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
+	border-radius: 16px;
+  border: solid 2px @text-color-primary;
+  font-weight: normal;
+  font-style: normal;
+  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#tray {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: none;
+        border-radius: 12px 0px 0px 12px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#clock {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: 1px solid @text-color-primary;
+        border-radius: 12px 0px 0px 12px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;  
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+    /*border-left: solid 1px #282738;*/
+}
+
+
+#clock.calendar {
+    color: @muted-text-color;
+    background-color: transparent;
+    border: 2px solid @text-color-primary;
+    border-radius: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;
+    border-right: 1px solid @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+
+/*#network {
+  background: @bg-color-primary;
+        border: 1px solid @border-color-secondary;
+        border-right: none;
+  border-radius: 10px 0px 0px 20px;
+   margin: 5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px;
+
+}
+
+#network.wifistrenght {
+  border-left: none;
+   border-radius: 0px 0px 0px 0px;
+   margin: 5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px;
+
+}*/
+
+
+#network {
+    background-color:@bg-color-primary;
+    border: 1px solid @border-color-secondary;
+    border-right: none;
+    border-radius: 10px 0px 0px 20px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 15px;
+}
+
+#network.wifistrenght {
+    background-color:@bg-color-primary;
+        border: 1px solid @border-color-secondary;
+        border-radius: 0px 0px 0px 0px;
+    border-right: none;
+    border-left: none;
+    /*color: #FABD2D;*/
+    padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
+
+}
+
+/*#backlight {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 1px solid @text-color-primary;
+        border-right: none;
+        border-radius: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+} */
+
+
+#backlight {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-radius: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+
+#battery {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 1px solid @text-color-primary;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 15px;
+   border-bottom: solid 1px  @text-color-primary;
+  border-bottom-left-radius: 20px;
+  font-weight: bold;
+}
+
+#battery.icon {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: none;
+        border-radius: 0px 12px 12px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#battery.charging {
+    color: @muted-text-color;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: @power-text-color;
+    border-radius: 5px 5px 5px 5px;
+}
+
+
+#pulseaudio {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: none;
+        border-radius: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#pulseaudio.microphone {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: none;
+        border-radius: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+
+#pulseaudio.muted {
+     color: @muted-text-color;
+    border-left: none;
+    border-right: none;
+       border-radius: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 0px;
+     margin: 5px 0px 5px 0px;
+
+}
+
+#pulseaudio.microphone.muted {
+    color: @muted-text-color;
+     border: 1px solid @text-color-primary;
+    border-left: none;
+       border-radius: 0px 20px 10px 0px;
+
+}
+
+#custom-updates {
+  color: @muted-text-color;
+	background: transparent;
+	margin: 5px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
+	border-radius: 16px;
+  border: solid 2px @text-color-primary;
+  font-weight: normal;
+  font-style: normal;
+  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+
+}
+
+
+
+/*
+#custom-randwall {
+    color: @text-color-primary;
+    border-radius: 8px;
+    margin-right: 0px;
+}
+
+#custom-launcher {
+    color: #e5809e;
+    background-color: @bg-color-secondary;
+    border-radius: 0px 20px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0 20px 0 13px;
+    border-right: solid 1px #282738;
+    font-size: 20px;
+}
+
+#custom-launcher button:hover {
+    background-color: #FB4934;
+    color: transparent;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+}
+*/
+#custom-playerctl {
+    background-color: transparent;
+    border: 2px solid @text-color-primary;
+  border-radius: 12px 12px 12px 12px;
+  /*padding: 0px 7px 0px 0px;
+  margin: 5px 5px 5px 5px;*/
+/*border-bottom: solid 1px  @border-color-primary;
+*/
+margin: 5px 15px 5px 15px;
+padding: 0px 5px 0px 5px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#custom-playerlabel {
+    color: @muted-text-color;
+    background: transparent;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 12px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 10px;
+    text-shadow: 0 0 5px @text-color-primary, 0 0 5px @text-color-primary;
+}
+
+#window {
+    background: @bg-color-secondary;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+#custom-wf-recorder {
+    padding: 0 20px;
+    color: #e5809e;
+    background-color: #1E1E2E;
+}
+*/
+#cpu {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: 1px solid @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#memory {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: 1px solid @text-color-primary;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#disk {
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: none;
+        border-radius: 0px 12px 12px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
+#custom-mediaplayer
+{
+  font-size: 14px;
+  border-radius: 5px 10px 10px 5px;
+  margin-left: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px
+}
+/*@import "./waybar-mediaplayer/src/style.css";*/
+
+
+#custom-hyprpicker {
+    background-color: @bg-color-secondary;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 11px 0px 9px;
+    font-weight: bold;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+}
+
