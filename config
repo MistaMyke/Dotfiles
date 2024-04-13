@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[status]
+	showUntrackedFiles = no
+[branch "main"]
+	remote = https://github.com/MistaMyke/Dotfiles.git
+	merge = refs/heads/main
