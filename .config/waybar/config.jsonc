@@ -1,10 +1,10 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "mod": "dock",
     "exclusive": true,
     "passtrough": false,
-    "gtk-layer-shell": true,
+    "gtk-layer-shell": false,
     "height": 0,
     "modules-left": [
     "clock",
@@ -21,7 +21,7 @@
     ],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
-        "custom-updates",
+        "custom/pacman",
         "tray",
         //"network",
         //"network#wifistrenght",
@@ -185,17 +185,22 @@
 
     "backlight": {
         "exec": "light -G",
-        "format": " {percent}% {icon}  ",
+        "format": "{icon} {percent}%",
         "format-icons": //note you can only have one icon set actiave at a time, commnet out the one you are not using 
-    // ["", "", "", "", "", "", "", "", ""] //moonphase icons
-    ["󰛩","󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"] //lightblulb icons
+      [" ", " ", " ", " ", " ", " ", " ", " ", " "] //moonphase icons
+    //["󰛩 ","󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󰛨 "] //lightblulb icons
   },
 
-    "custom-updates": {
-        "exec": "(yay -Syu)",
-        "interval": 7200,
-        "format": " {}",
-    },
+"custom/pacman": {
+  "format": "{icon}{}",
+  "return-type": "json",
+  "format-icons": {
+    "pending-updates": " ",
+    "updated": " "
+  },
+  "exec-if": "which waybar-updates",
+  "exec": "waybar-updates"
+},
 
   //  "custom/language": {
  //        "exec": "setxkbmap -query | grep 'layout:'" ,
@@ -223,13 +228,13 @@
 
     "clock": {
 	"interval": 1,
-       "format": "󰅐  {:%R:%S}"
+       "format": "󰅐  {:%H:%M:%S}"
                 
     },
 
   "clock#calendar":{
     "interval": 96,
-    "format": "  {:%d/%m/%Y}",
+    "format": "  {:%m/%d/%Y}",
     "tooltip":true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -252,7 +257,7 @@
     
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "tooltip": false,
         "format-muted": "󰸈 Muted",
         "on-click": "pamixer -t",
@@ -260,13 +265,13 @@
         "on-scroll-down": "pamixer -d 1",
         "scroll-step": 1,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
             "portable": "",
-            "car": "",
-            "default": ["", "", "󰕾"]
+            "car": " ",
+            "default": [" ", " ", "󰕾 "]
         }
     },
     "pulseaudio#microphone": {
@@ -325,8 +330,8 @@
     ]
     
     },
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}%  ",
+    "format-plugged": "{capacity}%  ",
     "format-alt": "{time} {icon}"
     },
 
@@ -345,16 +350,16 @@
 
    // "format-ethernet": "{ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-disconnected": "Disconnected ⚠ ",
     "format-alt": "{essid}| {ifname}: {ipaddr}/{cidr} |"
     },
 
     //custom-power
     "custom/power": {
-      "format": "",
+      "format": " ",
       "on-click": "wlogout",
       "tooltip": false
+},
 
 
-}
 }

@@ -5,6 +5,7 @@
 
 * {
     border: none;
+    background: transparent;
     padding-left: 2px;
     padding-right: 2px;
     /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
@@ -20,7 +21,7 @@ window#waybar {
    /* background: rgba(30, 30, 46, 0.5);*/
   background: transparent; 
   /*border-bottom: 1px solid @bg-color-secondary;*/
-    color: @text-color-primary;
+    /*color: @text-color-primary;*/
 }
 
 #workspaces {
@@ -66,7 +67,7 @@ window#waybar {
   color: @muted-text-color;
 	background: transparent;
 	margin: 5px 5px 5px 5px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 0px 0px 2px;
 	border-radius: 16px;
   border: solid 2px @text-color-primary;
   font-weight: normal;
@@ -134,7 +135,7 @@ window#waybar {
 
 
 #network {
-    background-color:@bg-color-primary;
+    background-color: transparent;
     border: 1px solid @border-color-secondary;
     border-right: none;
     border-radius: 10px 0px 0px 20px;
@@ -143,7 +144,7 @@ window#waybar {
 }
 
 #network.wifistrenght {
-    background-color:@bg-color-primary;
+    background-color:@transparent;
         border: 1px solid @border-color-secondary;
         border-radius: 0px 0px 0px 0px;
     border-right: none;
@@ -171,6 +172,7 @@ window#waybar {
     color: @muted-text-color;
         background-color: transparent;
         border: 2px solid @text-color-primary;
+        border-right: none;
         border-radius: 0px 0px 0px 0px;
     padding: 0px 10px 0px 10px;
     margin: 5px 0px 5px 0px;
@@ -245,12 +247,16 @@ window#waybar {
 
 
 #pulseaudio.muted {
-     color: @muted-text-color;
-    border-left: none;
-    border-right: none;
-       border-radius: 0px 0px 0px 0px;
-  padding: 0px 5px 0px 0px;
-     margin: 5px 0px 5px 0px;
+    color: @muted-text-color;
+        background-color: transparent;
+        border: 2px solid @text-color-primary;
+        border-right: none;
+        border-radius: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;   
+    border-right: solid 1px @text-color-primary;
+    text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
 
 }
 
@@ -262,18 +268,37 @@ window#waybar {
 
 }
 
-#custom-updates {
+
+@keyframes blink-update {
+	to {
+		background-color: dodgerblue;
+	}
+}
+
+#custom-pacman {
   color: @muted-text-color;
 	background: transparent;
 	margin: 5px 5px 5px 5px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 0px 0px 2px;
 	border-radius: 16px;
   border: solid 2px @text-color-primary;
   font-weight: normal;
   font-style: normal;
   text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
-
 }
+#custom-pacman.pending-updates {
+  color: @muted-text-color;
+	background: transparent;
+	margin: 5px 5px 5px 0px;
+  padding: 0px 0px 0px 2px;
+	border-radius: 16px;
+  border: solid 2px @text-color-primary;
+  font-weight: normal;
+  font-style: normal;
+  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;
+  }
+
+
 
 
 
@@ -335,7 +360,7 @@ padding: 0px 5px 0px 5px;
 }
 
 #window {
-    background: @bg-color-secondary;
+    background: transparent;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -400,7 +425,7 @@ padding: 0px 5px 0px 5px;
 
 
 #custom-hyprpicker {
-    background-color: @bg-color-secondary;
+    background-color: transparent;
     /*color: #8EC07C;*/
     border-radius: 16px;
     margin: 5px;
